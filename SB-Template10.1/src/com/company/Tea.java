@@ -2,29 +2,20 @@ package com.company;
 
 public class Tea extends CaffeinatedBeverage {
 
-    void prepareRecipe() {
-        getMug();
-        boilWater();
-        steepInBag();
-        pourInCup();
-    }
-
+    // all of the drinks start out witha gradual heating process
     @Override
     void brewBeverage() {
         System.out.println("Steeping the tea bag.");
     }
 
+    // the hooks - eliminate the extras that are not wanted
     @Override
-    void addCondiments() {
-        System.out.println("Adding lemon.");
+    boolean wantsSugar() {
+        return false;
     }
 
-    void boilWater() {
-        System.out.println("Boiling water");
+    @Override
+    boolean wantsMilk() {
+        return false;
     }
-
-    void steepInBag() {
-        System.out.println("Steeping In Bag");
-    }
-
 }

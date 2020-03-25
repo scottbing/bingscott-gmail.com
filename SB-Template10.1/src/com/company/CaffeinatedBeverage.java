@@ -7,9 +7,7 @@ public abstract class CaffeinatedBeverage {
         boilWater();
         brewBeverage();
         pourInCup();
-        if (wantsCondiments()) {
-            addCondiments();
-        }
+        // check hooks
         if (wantsLemon()) {
             addLemon();
         }
@@ -22,13 +20,26 @@ public abstract class CaffeinatedBeverage {
 
     }
 
+    // variants
     abstract void brewBeverage();
-    abstract void addCondiments();
 
+    // hooks
     boolean wantsCondiments() { return true; }
     boolean wantsLemon() { return true; }
     boolean wantsSugar() { return true; }
     boolean wantsMilk() { return true; }
+
+    void addLemon() {
+        System.out.println("Adding lemon");
+    }
+
+    void addSugar() {
+        System.out.println("Adding sugar");
+    }
+
+    void addMilk() {
+        System.out.println("Adding milk");
+    }
 
     final void getMug() {
         System.out.println("Got Mug");
@@ -42,16 +53,5 @@ public abstract class CaffeinatedBeverage {
         System.out.println("Pouring in cup");
     }
 
-    void addLemon() {
-        System.out.println("Adding lemon");
-    }
-
-    void addSugar() {
-        System.out.println("Adding sugar");
-    }
-
-    void addMilk() {
-        System.out.println("Adding milk");
-    }
 
 }

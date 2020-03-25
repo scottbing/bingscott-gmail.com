@@ -1,16 +1,16 @@
 package com.company;
 
-public class Coffee extends CaffeinatedBeverage{
+public class WarmDrPepper extends CaffeinatedBeverage{
 
     // all of the drinks start out witha gradual heating process
     @Override
     void brewBeverage() {
-        System.out.println("Dripping coffee through filter.");
+        System.out.println("Heating the Dr. Pepper");
     }
 
     // the hooks - eliminate the extras that are not wanted
     @Override
-    boolean wantsLemon() {
+    boolean wantsMilk() {
         return false;
     }
 
@@ -19,6 +19,4 @@ public class Coffee extends CaffeinatedBeverage{
         return false;
     }
 
-
 }
-
